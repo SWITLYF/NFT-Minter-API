@@ -1,3 +1,4 @@
+
 import express, { Application } from 'express';
 import cors from 'cors';
 import routes from './routes';
@@ -10,9 +11,15 @@ const PORT = process.env.port || 3333;
 
 connect();
 
+// const corsOptions = {
+//     origin: "https://dc-backend-client.vercel.app"
+// };
+
 const corsOptions = {
-    // origin: "https://dc-backend-client.vercel.app"
-    origin: "http://localhost:3000"
+  origin: [
+    "https://proj.com.ng", 
+    "https://www.proj.com.ng"
+  ]
 };
   
 app.use(cors(corsOptions));
